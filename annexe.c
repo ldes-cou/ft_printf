@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 10:58:38 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/02/12 12:03:11 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/02/12 15:10:18 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 void	ft_putchar(char c, t_data *data)
 {
 	write(1, &c, 1);
-	printf("%i", data->count);
 	data->count++;
-	printf("%i", data->count);
-	data->i++;
 }
 
 void	ft_putstr(char *str, t_data *data)
 {
-	while (str[data->i] && str)
-		ft_putchar(str[data->i], data);
+	while (*str)
+	{
+		ft_putchar(*str, data);
+		str++;
+	}
 }
 
 void	ft_putnbr(int nb, t_data *data)
@@ -44,8 +44,5 @@ void	ft_putnbr(int nb, t_data *data)
 		ft_putnbr(n % 10, data);
 	}
 	else
-	{
 		ft_putchar(n + '0', data);
-		data->count++;
-	}
 }
