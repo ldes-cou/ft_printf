@@ -6,7 +6,7 @@
 /*   By: ldes-cou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 14:55:41 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/02/11 22:35:34 by Sophie           ###   ########.fr       */
+/*   Updated: 2021/02/12 11:42:11 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@ void ft_tab(const char *str, va_list *ap, t_data *data)
 	{
 		if (str[data->i] == '%')
 		{
-			if (str[data->i + 1] == 'c')
+			data->i++;
+			if (str[data->i] == 'c')
 				data->fun_array[0](ap);
-			if (str[data->i + 1] == 's')
+			if (str[data->i] == 's')
 				data->fun_array[1](ap);
 			if (str[data->i] == 'p')
 				data->fun_array[2](ap);
@@ -31,19 +32,13 @@ void ft_tab(const char *str, va_list *ap, t_data *data)
 				data->fun_array[4](ap);
 			if (str[data->i] == 'x')	
 				data->fun_array[5](ap);
-			if (str[data->i] == 'x')
-				data->fun_array[6](ap);
-			if (str[data->i] == 'x')
-				data->fun_array[7](ap);
 			if (str[data->i] == 'X')
-				data->fun_array[8](ap);
-			data->i += 2;
-		}
-		else
-		{
-			ft_putchar(str[data->i], data);
+				data->fun_array[6](ap);
+			if (str[data->i] == '%')
+				data->fun_array[7](ap);
 			data->i++;
 		}
-			
+		else
+			ft_putchar(str[data->i], data);
 	}
 }	

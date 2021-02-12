@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/01 14:27:41 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/02/11 15:45:13 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/02/12 10:53:01 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,14 @@ typedef struct s_data
 }				t_data;
 
 void	ft_init_struct(t_data *data);//creer une fonction  reinitialisier la struct
-void	ft_putnbr(int);
+void	ft_putnbr(int, t_data *data);
 void	ft_putchar(char c, t_data *data);
 void	ft_putstr(char *str, t_data *data);
 void	ft_tab(const char *str, va_list *ap, t_data *data);
 void	ft_convert_s(va_list ap, t_data *data);
 void	ft_init_type(t_data *data);
+void	ft_convert_i(va_list ap, t_data *data);
+void	ft_convert_c(va_list ap, t_data *data);
+
 #endif
 
