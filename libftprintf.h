@@ -1,17 +1,5 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/01 14:27:41 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/02/15 15:06:24 by Sophie           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef LIBFTPRINTF_H
+# define LIBFTPRINTF_H
 
 # include <stdarg.h>
 # include <stdlib.h>
@@ -30,12 +18,12 @@ typedef void(*f)(void *, ...);
 typedef struct s_data
 {
 	char		buf[2048];
-	int		converter;
 	int		width;
 	int		precison;
+	int		minus;
+	int		zero;
 	int		len;
 	int		i;
-	int		type;
 	int		count;
 	f		fun_array[9];
 }				t_data;

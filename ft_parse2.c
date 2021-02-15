@@ -6,11 +6,11 @@
 /*   By: Sophie <ldescou@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 08:49:55 by Sophie            #+#    #+#             */
-/*   Updated: 2021/02/15 15:00:41 by Sophie           ###   ########.fr       */
+/*   Updated: 2021/02/15 16:25:28 by Sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libftprintf.h"
 
 void	ft_init_type(t_data *data)
 {

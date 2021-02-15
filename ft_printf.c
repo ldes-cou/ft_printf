@@ -6,13 +6,11 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 13:51:20 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/02/15 14:54:13 by Sophie           ###   ########.fr       */
+/*   Updated: 2021/02/15 16:25:58 by Sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-//#include <stdarg.h>
-#include "ft_printf.h"
+#include "libftprintf.h"
 
 int ft_printf(const char *format, ...)
 {
