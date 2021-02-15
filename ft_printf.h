@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/01 14:27:41 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/02/12 10:53:01 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/02/15 15:06:24 by Sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@
 #define FLAGS "-0.*"
 #define TYPE "cspdiuxX%"
 #define HEXA_LO "0123456789abcdef"
-#define	HEXA_UP	"0123456789ABCDEFG"
+#define	HEXA_UP	"0123456789ABCDEF"
 
 //definir les types dans la structure pour iterer dedans 
 typedef void(*f)(void *, ...);
 
 typedef struct s_data
 {
-	char	buf[2048];
+	char		buf[2048];
 	int		converter;
 	int		width;
 	int		precison;
@@ -42,6 +42,7 @@ typedef struct s_data
 
 void	ft_init_struct(t_data *data);//creer une fonction  reinitialisier la struct
 void	ft_putnbr(int, t_data *data);
+void	ft_putnbr_u(int, t_data *data);
 void	ft_putchar(char c, t_data *data);
 void	ft_putstr(char *str, t_data *data);
 void	ft_tab(const char *str, va_list *ap, t_data *data);
@@ -49,6 +50,12 @@ void	ft_convert_s(va_list ap, t_data *data);
 void	ft_init_type(t_data *data);
 void	ft_convert_i(va_list ap, t_data *data);
 void	ft_convert_c(va_list ap, t_data *data);
+int	ft_strlen(char *str);
+void	ft_putnbr_base(int nbr, char *base, t_data *data);
+void	ft_convert_x_lo(va_list ap, t_data *data);
+void	ft_convert_x_up(va_list ap, t_data *data);
+void	ft_convert_u(va_list ap, t_data *data);
+void	ft_convert_percent(char c, t_data *data);
 
 #endif
 

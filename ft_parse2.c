@@ -6,7 +6,7 @@
 /*   By: Sophie <ldescou@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 08:49:55 by Sophie            #+#    #+#             */
-/*   Updated: 2021/02/12 10:54:04 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/02/15 15:00:41 by Sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ void	ft_init_type(t_data *data)
 	data->fun_array[1] = (f)&ft_convert_s;
 	//data->fun_array[2] = &ft_convert_p;
 	data->fun_array[3] = (f)&ft_convert_i;
-	//data->fun_array[4] = &ft_convert_u;
-	//data->fun_array[5] = &ft_convert_x_lo;
-	//data->fun_array[6] = &ft_convert_x_up;
-	//data->fun_array[7] = &ft_convert_%;
+	data->fun_array[4] = (f)&ft_convert_u;
+	data->fun_array[5] = (f)&ft_convert_x_lo;
+	data->fun_array[6] = (f)&ft_convert_x_up;
+	data->fun_array[7] = (f)&ft_convert_percent;
 }
 
 /*int	ft_parse_type(char *str, t_data *data)

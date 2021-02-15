@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_convert_x.c                                     :+:      :+:    :+:   */
+/*   ft_convert_u.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Sophie <ldes-cou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/02 14:13:12 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/02/15 14:02:38 by Sophie           ###   ########.fr       */
+/*   Created: 2021/02/15 14:34:27 by Sophie            #+#    #+#             */
+/*   Updated: 2021/02/15 14:43:34 by Sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ft_printf.h"
+#include "ft_printf.h"
 
-void	ft_convert_x_lo(va_list ap, t_data *data)
+void	ft_convert_u(va_list ap, t_data *data)
 {
-	ft_putnbr_base(va_arg(ap, int), HEXA_LO, data);
-
+	ft_putnbr_u(va_arg(ap, int), data);
 }
-void	ft_convert_x_up(va_list ap, t_data *data)
-{
-	ft_putnbr_base(va_arg(ap, int), HEXA_UP, data);	
-}
-
