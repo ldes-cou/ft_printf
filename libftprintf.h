@@ -5,7 +5,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
-//# include "libft/libft.h"
+# include "libft/libft.h"
 
 #define FLAGS "-0.*"
 #define TYPE "cspdiuxX%"
@@ -19,7 +19,7 @@ typedef struct s_data
 {
 	char		buf[2048];
 	int		width;
-	int		precison;
+	int		precision;
 	int		minus;
 	int		zero;
 	int		len;
@@ -38,12 +38,13 @@ void	ft_convert_s(va_list ap, t_data *data);
 void	ft_init_type(t_data *data);
 void	ft_convert_i(va_list ap, t_data *data);
 void	ft_convert_c(va_list ap, t_data *data);
-int	ft_strlen(char *str);
 void	ft_putnbr_base(int nbr, char *base, t_data *data);
 void	ft_convert_x_lo(va_list ap, t_data *data);
 void	ft_convert_x_up(va_list ap, t_data *data);
 void	ft_convert_u(va_list ap, t_data *data);
 void	ft_convert_percent(char c, t_data *data);
+int	ft_check_flags(t_data *data);
+void	ft_init_flags(const char *format, va_list ap, t_data *data);
 
 #endif
 

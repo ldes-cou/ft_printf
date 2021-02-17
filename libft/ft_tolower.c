@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_convert_s.c                                     :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/11 14:36:29 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/02/17 18:56:53 by Sophie           ###   ########.fr       */
+/*   Created: 2020/11/19 09:24:26 by ldes-cou          #+#    #+#             */
+/*   Updated: 2020/12/03 09:55:23 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libft.h"
 
-void	ft_convert_s(va_list ap, t_data *data)
+int	ft_tolower(int c)
 {
-//	if (ft_check_flags(data))
-	ft_putstr(va_arg(ap, char *), data);
+	if (c >= 'A' && c <= 'Z')
+		c += 32;
+	return (c);
 }

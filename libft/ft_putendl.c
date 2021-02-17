@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_convert_s.c                                     :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldes-cou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/11 14:36:29 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/02/17 18:56:53 by Sophie           ###   ########.fr       */
+/*   Created: 2021/01/05 11:26:31 by ldes-cou          #+#    #+#             */
+/*   Updated: 2021/01/05 11:38:26 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libft.h"
 
-void	ft_convert_s(va_list ap, t_data *data)
+void	ft_putendl(char const *str)
 {
-//	if (ft_check_flags(data))
-	ft_putstr(va_arg(ap, char *), data);
+	if (str != NULL)
+	{
+		write (1, str, ft_strlen(str));
+		write (1, "\n", 1);
+	}
 }

@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_convert_s.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/11 14:36:29 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/02/17 18:56:53 by Sophie           ###   ########.fr       */
+/*   Created: 2020/12/03 10:48:24 by ldes-cou          #+#    #+#             */
+/*   Updated: 2020/12/03 15:21:26 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libft.h"
 
-void	ft_convert_s(va_list ap, t_data *data)
+void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-//	if (ft_check_flags(data))
-	ft_putstr(va_arg(ap, char *), data);
+	if (alst && new)
+	{
+		new->next = *alst;
+		*alst = new;
+	}
 }

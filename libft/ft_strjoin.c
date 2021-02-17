@@ -1,19 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_convert_s.c                                     :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/11 14:36:29 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/02/17 18:56:53 by Sophie           ###   ########.fr       */
+/*   Created: 2020/11/23 18:43:09 by ldes-cou          #+#    #+#             */
+/*   Updated: 2020/12/03 10:21:51 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libft.h"
 
-void	ft_convert_s(va_list ap, t_data *data)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-//	if (ft_check_flags(data))
-	ft_putstr(va_arg(ap, char *), data);
+	char	*str;
+	int		i;
+	int		j;
+
+	i = ft_strlen(s1) + ft_strlen(s2) + 1;
+	str = (char *)malloc(sizeof(*s1) * i);
+	if (!str)
+		return (NULL);
+	i = 0;
+	j = 0;
+	if (s1[i])
+		while (s1[i])
+		{
+			str[i] = s1[i];
+			i++;
+		}
+	if (s2[j])
+		while (s2[j])
+		{
+			str[i] = s2[j];
+			j++;
+			i++;
+		}
+	str[i] = '\0';
+	return (str);
 }

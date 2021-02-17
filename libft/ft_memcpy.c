@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_convert_s.c                                     :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/11 14:36:29 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/02/17 18:56:53 by Sophie           ###   ########.fr       */
+/*   Created: 2020/11/20 12:06:17 by ldes-cou          #+#    #+#             */
+/*   Updated: 2020/12/03 10:09:51 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libft.h"
 
-void	ft_convert_s(va_list ap, t_data *data)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-//	if (ft_check_flags(data))
-	ft_putstr(va_arg(ap, char *), data);
+	size_t	i;
+	char	*dst_cpy;
+	char	*src_cpy;
+
+	i = 0;
+	dst_cpy = (char *)dst;
+	src_cpy = (char *)src;
+	if ((dst_cpy == 0) && (src_cpy == 0))
+		return (NULL);
+	while (n--)
+	{
+		dst_cpy[i] = src_cpy[i];
+		i++;
+	}
+	return (dst);
 }

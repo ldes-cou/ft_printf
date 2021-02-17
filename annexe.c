@@ -6,21 +6,12 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 10:58:38 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/02/15 16:24:38 by Sophie           ###   ########.fr       */
+/*   Updated: 2021/02/17 17:30:08 by Sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int		ft_strlen(char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
 void	ft_putchar(char c, t_data *data)
 {
 	write(1, &c, 1);

@@ -1,6 +1,6 @@
 #include "libftprintf.h"
 
-void	ft_init_flags(const char *format, t_data *data)
+void	ft_init_flags(const char *format, va_list ap, t_data *data)
 {
 	while (format[data->i])
 	{
@@ -18,16 +18,17 @@ void	ft_init_flags(const char *format, t_data *data)
 		if (format[data->i] == '*')
 		{
 			if (format[data->i - 1])
-				data->wildcard_precision = 1;
+				data->precision = va_arg(ap, int);
 			else
-				data->wildcard_width = 1;
+				data->width = va_arg(ap, int);
+				printf("width : %i\n", data->width);
 		}
-		data->i++;
+		data->i++; //ici pb avec la fonction, s'il y a des choses à afficher il les skip ...
+		//printf("format init_flags: %s", format);
 	}
 }
 int	ft_check_flags(t_data *data)
 {
-	ft_init_flags(format, data);
 	if (data->minus || data->zero || data->precision || data->width)
 		return(1);
 	return (0);

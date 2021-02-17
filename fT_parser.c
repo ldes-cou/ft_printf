@@ -6,14 +6,15 @@
 /*   By: ldes-cou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 14:55:41 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/02/15 16:22:43 by Sophie           ###   ########.fr       */
+/*   Updated: 2021/02/17 18:59:05 by Sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
 void ft_tab(const char *str, va_list *ap, t_data *data)
-{
+{		
+	
 	ft_init_type(data);
 	while (str[data->i])
 	{
@@ -38,7 +39,10 @@ void ft_tab(const char *str, va_list *ap, t_data *data)
 				data->fun_array[7](ap, data);
 		}
 		else
-			ft_putchar(str[data->i], data);
+		{
+			ft_putchar(str[data->i], data); //comment traiter les flags sans les afficher ?? 
+			//ft_init_flags(str, *ap, data);
+		}
 		data->i++;
 	}
 }	
