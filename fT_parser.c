@@ -6,7 +6,7 @@
 /*   By: ldes-cou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 14:55:41 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/02/17 18:59:05 by Sophie           ###   ########.fr       */
+/*   Updated: 2021/02/18 10:42:05 by Sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void ft_tab(const char *str, va_list *ap, t_data *data)
 		if (str[data->i] == '%')
 		{
 			data->i++;
+			ft_init_flags(str, *ap, data);
 			if (str[data->i] == 'c')
 				data->fun_array[0](ap, data);
 			if (str[data->i] == 's')
@@ -41,7 +42,6 @@ void ft_tab(const char *str, va_list *ap, t_data *data)
 		else
 		{
 			ft_putchar(str[data->i], data); //comment traiter les flags sans les afficher ?? 
-			//ft_init_flags(str, *ap, data);
 		}
 		data->i++;
 	}

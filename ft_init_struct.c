@@ -6,7 +6,7 @@
 /*   By: Sophie <ldes-cou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 11:38:24 by Sophie            #+#    #+#             */
-/*   Updated: 2021/02/17 17:31:56 by Sophie           ###   ########.fr       */
+/*   Updated: 2021/02/18 09:46:10 by Sophie           ###   ########.fr       */
 /*   Updated: 2021/02/10 10:27:03 by Sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -20,4 +20,6 @@ void	ft_init_struct(t_data *data)
 	data->len = 0;
 	data->i = 0;
 	data->count = 0;
+	data->minus = 0;
+	data->zero = 0;
 }
