@@ -46,6 +46,8 @@ void	ft_convert_percent(char c, t_data *data);
 int	ft_check_flags(t_data *data);
 void	ft_init_flags(const char *format, va_list ap, t_data *data);
 int	ft_is_type(char c);
+void	ft_treat_width(va_list ap, t_data *data);
+size_t	ft_intlen(int n);
 
 #endif
 
