@@ -6,7 +6,7 @@
 /*   By: Sophie <ldescou@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 08:49:55 by Sophie            #+#    #+#             */
-/*   Updated: 2021/02/15 16:25:28 by Sophie           ###   ########.fr       */
+/*   Updated: 2021/02/22 17:34:49 by Sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,13 @@ void	ft_init_type(t_data *data)
 	data->fun_array[7] = (f)&ft_convert_percent;
 }
 
-/*int	ft_parse_type(char *str, t_data *data)
+int	ft_parse_type(const char *str, t_data *data)
 {
-	int type_index;
 
-	type_index  = ft_strchr(TYPE, str[0]);
-	data->type = type_index - TYPE;
+	data->type  = ft_strchr_type(TYPE, str[1]);
+
+	printf("data->type : %u\n", data->type);
 	return (1);
 }
-*/
 //appeler la fun_array comme une fonction avec 'type' comme index
 //===> fun_array[type](argument); 

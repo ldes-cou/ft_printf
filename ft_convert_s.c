@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 14:36:29 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/02/19 18:23:42 by Sophie           ###   ########.fr       */
+/*   Updated: 2021/02/22 14:02:30 by Sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 void	ft_convert_s(va_list ap, t_data *data)
 {
-	char *str;
 	int i;
 	
-	 = 0;
-	str = va_arg(ap, char *);
-	while (str[i])
+	i = 0;
+	data->arg = va_arg(ap, char *);
+	while (data->arg[i])
 	{
-		data->buf[i] = str[i]
+		buf[i] = data->arg[i];
 		i++;
 	}
 	if (ft_check_flags(data))
@@ -31,15 +30,16 @@ void	ft_convert_s(va_list ap, t_data *data)
 		printf("%i\n", data->precision);
 		printf("%i\n", data->width);
 		printf("there are flags bitch !\n");
-		if (data->width && !data->precision)
+		if (!data->precision)
 		{
-			data->len = data->width - ft_strlen(data->buf);
+			data->len = data->width - ft_strlen(buf);
+			printf("data->len : %i\n", data->len); 
 			if (data->len < 0)
-				ft_putstr(str, data);
+				ft_putstr(buf, data);
 			else
 				ft_treat_width(ap, data);
 		}
 	}
 	else
-		ft_putstr(data->buf, data);
+		ft_putstr(buf, data);
 }
