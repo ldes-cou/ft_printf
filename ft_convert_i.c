@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 10:37:51 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/02/22 14:24:47 by Sophie           ###   ########.fr       */
+/*   Updated: 2021/02/23 14:57:13 by Sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_convert_i(va_list ap, t_data *data)
 				ft_putnbr(i, data);
 			}
 			else
-				ft_treat_width(ap, data);
+				ft_treat_width(data);
 		}
 	}
 	else

@@ -6,7 +6,7 @@
 /*   By: ldes-cou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 14:55:41 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/02/22 14:46:31 by Sophie           ###   ########.fr       */
+/*   Updated: 2021/02/23 14:58:43 by Sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void ft_tab(const char *str, va_list *ap, t_data *data)
 		{
 			data->i++;
 			ft_init_flags(str, *ap, data);
-			ft_parse_type(str, data);
+			//ft_parse_type(str, data);
 			if (str[data->i] == 'c')
 				data->fun_array[0](ap, data);
 			if (str[data->i] == 's')
@@ -38,7 +38,7 @@ void ft_tab(const char *str, va_list *ap, t_data *data)
 			if (str[data->i] == 'X')
 				data->fun_array[6](ap, data);
 			if (str[data->i] == '%')
-				data->fun_array[7](ap, data);
+				data->fun_array[7](data);
 		}
 		else
 		{

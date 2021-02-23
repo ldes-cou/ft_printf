@@ -50,9 +50,11 @@ int	ft_check_flags(t_data *data);
 /*parser*/
 int	ft_check_flags(t_data *data);
 int	ft_is_type(char c);
+void	ft_treat_digit_flag(const char *format, t_data *data);
+void	ft_treat_wildcard(const char *format, va_list ap, t_data *data);
 int	ft_parse_type(const char *str, t_data *data);
 /*handler*/
-void	ft_treat_width(va_list ap, t_data *data);
+void	ft_treat_width(t_data *data);
 /*conversions*/
 void	ft_convert_s(va_list ap, t_data *data);
 void	ft_convert_i(va_list ap, t_data *data);
