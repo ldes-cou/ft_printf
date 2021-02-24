@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 10:37:51 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/02/23 14:57:13 by Sophie           ###   ########.fr       */
+/*   Updated: 2021/02/24 12:31:06 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,7 @@ void	ft_convert_i(va_list ap, t_data *data)
 	i = 0;
 	data->arg = ft_itoa(va_arg(ap, int));
 	printf("data->arg : %s\n", data->arg);
-	while (data->arg[i])
-	{
-		buf[i] = data->arg[i];
-		i++;
-	}
+	i = ft_atoi(data->arg);
 	if (ft_check_flags(data))
 	{
 		printf("%i\n", data->minus);
@@ -31,22 +27,23 @@ void	ft_convert_i(va_list ap, t_data *data)
 		printf("%i\n", data->precision);
 		printf("%i\n", data->width);
 		printf("there are flags bitch !\n");
-		if (!data->precision)
+		if (!data->dot)
 		{
-			data->len = data->width - ft_strlen(buf);
+			data->len = data->width - ft_strlen(data->arg);
 			printf("data->len : %i\n", data->len);
-			if (data->len < 0)
+			if (data->len < 0 || data->minus)
 			{
-				i = ft_atoi(data->arg);
 				ft_putnbr(i, data);
 			}
 			else
+			{
 				ft_treat_width(data);
+				ft_putnbr(i, data);
+			}
 		}
 	}
 	else
 	{
-		i = ft_atoi(buf);
 		printf("i_atoi : %i\n", i);
 		ft_putnbr(i, data);
 	}

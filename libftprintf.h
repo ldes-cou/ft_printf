@@ -23,7 +23,9 @@ typedef struct s_data
 	char		*arg;
 	int		i_arg;
 	int		width;
+	int		wi;
 	int		precision;
+	int		dot;
 	int		minus;
 	int		zero;
 	int		len;
@@ -41,21 +43,22 @@ void	ft_putstr(char *str, t_data *data);
 void	ft_putnbr_base(int nbr, char *base, t_data *data);
 size_t	ft_intlen(int n);
 char	ft_strchr_type(char *str, char c);
+void	ft_putnstr(char *str, size_t n, t_data *data);
 /*initialisation*/
 void	ft_tab(const char *str, va_list *ap, t_data *data);
 void	ft_init_struct(t_data *data);
 void	ft_init_type(t_data *data);
 void	ft_init_flags(const char *format, va_list ap, t_data *data);
-int	ft_check_flags(t_data *data);
 /*parser*/
-int	ft_check_flags(t_data *data);
-int	ft_is_type(char c);
+int		ft_check_flags(t_data *data);
+int		ft_is_type(char c);
 void	ft_treat_digit_flag(const char *format, t_data *data);
 void	ft_treat_wildcard(const char *format, va_list ap, t_data *data);
-int	ft_parse_type(const char *str, t_data *data);
+int		ft_parse_type(const char *str, t_data *data);
 /*handler*/
 void	ft_treat_width(t_data *data);
 /*conversions*/
+int		ft_treat_str_prec(char *str, t_data *data);
 void	ft_convert_s(va_list ap, t_data *data);
 void	ft_convert_i(va_list ap, t_data *data);
 void	ft_convert_c(va_list ap, t_data *data);

@@ -30,7 +30,7 @@ void	ft_init_flags(const char *format, va_list ap, t_data *data)
 }
 int	ft_check_flags(t_data *data)
 {
-	if (data->minus || data->zero || data->precision || data->width)
+	if (data->minus || data->zero || data->dot || data->wi)
 		return (1);
 	return (0);
 }
@@ -39,6 +39,7 @@ void	ft_treat_wildcard(const char *format, va_list ap, t_data *data)
 {
 	if (format[data->i - 1] == '.')
 	{
+		data->dot = 1;
 		data->precision = va_arg(ap, int);
 		printf("precision : %i\n", data->precision);
 	}
@@ -53,6 +54,7 @@ void	ft_treat_digit_flag(const char *format, t_data *data)
 {
 	if (format[data->i - 1] == '.')
 	{
+		data->dot = 1;
 		data->precision = ft_atoi(&format[data->i]);
 		if (data->precision > 9)
 			data->i += (ft_intlen(data->precision) - 1);		
@@ -60,6 +62,7 @@ void	ft_treat_digit_flag(const char *format, t_data *data)
 	}
 	else
 	{
+		data->wi = 1;
 		data->width = ft_atoi(&format[data->i]);//convertir atoi
 		printf("width 1 : %i\n", data->width);
 		if (data->width > 9)

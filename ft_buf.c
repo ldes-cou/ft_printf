@@ -3,6 +3,7 @@ void	ft_init_buf(t_data *data)
 {
 	int i;
 
+	i = 0;
 	while (i < BUFFER_SIZE)
 	{
 		buf[i] = '\0';
