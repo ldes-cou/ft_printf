@@ -13,18 +13,15 @@ void	ft_treat_width(t_data *data)
 			data->len--;
 		}
 	}
-	if (data->zero && (!data->minus))
+	if (data->zero && !data->minus)
 	{
 		while (++i < data->len)
 			ft_putchar('0', data);
 	}
 	else
-	{	while (++i < data->len)
-		{	
-			printf("treat_i = %i\n", i); 
-			ft_putchar(' ', data); 
-		}
-	}
-	return ;
+	{
+		while (++i < data->len)
+			ft_putchar(' ', data);
+	}	return ;
 }
 	

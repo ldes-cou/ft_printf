@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 14:36:29 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/02/24 14:20:02 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/02/24 22:01:47 by Sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	ft_convert_s(va_list ap, t_data *data)
 		if (data->minus && data->width)
 			ft_putnstr(arg, len, data);
 		ft_treat_width(data);
+		//il y une couille dans le potage ...remettre un if precision tt ca ... n'affiche plus quand il y a qu'une width...haha
 		if (!data->minus)
 			ft_putnstr(arg, len, data);
 	}
