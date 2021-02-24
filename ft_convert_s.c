@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 14:36:29 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/02/24 12:12:56 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/02/24 14:20:02 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,7 @@ void	ft_convert_s(va_list ap, t_data *data)
 			ft_putnstr(arg, len, data);
 	}
 	else
-		ft_putstr(arg, data);	
-
+		ft_putstr(arg, data);
 }
 
 
