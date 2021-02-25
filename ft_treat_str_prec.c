@@ -4,7 +4,7 @@ int		ft_treat_str_prec(char *str, t_data *data)
 {
 	size_t strlen;
  
-	if (data->precision < (int)ft_strlen(str))
+	if (data->dot && (data->precision < (int)ft_strlen(str)))
 		strlen = data->precision;
 	else
 		strlen = ft_strlen(str);

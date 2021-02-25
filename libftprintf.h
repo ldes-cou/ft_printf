@@ -16,21 +16,20 @@
 //definir les types dans la structure pour iterer dedans 
 typedef void(*f)(void *, ...);
 char		buf[BUFFER_SIZE];
-int		i_buf[BUFFER_SIZE];
 
 typedef struct s_data
 {
-	char		*arg;
-	int		i_arg;
+	char	*arg;
 	int		width;
-	int		wi;
+	int		wi;//peut etre vire le 0 n'a pas d'incidence
 	int		precision;
 	int		dot;
 	int		minus;
 	int		zero;
 	int		len;
 	int		i;
-	char		type;
+	int		sign;
+	char	type;
 	int		count;
 	f		fun_array[9];
 }				t_data;
@@ -57,9 +56,10 @@ void	ft_treat_wildcard(const char *format, va_list ap, t_data *data);
 int		ft_parse_type(const char *str, t_data *data);
 /*handler*/
 void	ft_treat_width(t_data *data);
-/*conversions*/
+int		ft_treat_int(int nb, t_data *data);
 void	ft_treat_precision(size_t len, t_data *data);
 int		ft_treat_str_prec(char *str, t_data *data);
+/*conversions*/
 void	ft_convert_s(va_list ap, t_data *data);
 void	ft_convert_i(va_list ap, t_data *data);
 void	ft_convert_c(va_list ap, t_data *data);

@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 13:51:20 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/02/24 20:50:02 by Sophie           ###   ########.fr       */
+/*   Updated: 2021/02/25 15:59:17 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ int main()
 {
 	//(void)argc;
 	//(void)argv;
-	char	*i;
+	int	i;
 	int ret_moi;
 	int ret_vrai;
 	
-	i = "Hello";
-	ret_moi = ft_printf("%8s", i);
+	i = 2;
+	ret_moi = ft_printf("%010.5i", i);
 	printf("%c", '\n');
-	ret_vrai= printf("%8s", i);
+	ret_vrai= printf("%010.5i", i);
 	printf("%c", '\n');
    	printf("ma f°:%i\nla vraie f°:%i\n",ret_moi, ret_vrai);
 	return (0);

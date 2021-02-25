@@ -2,16 +2,21 @@
 
 void	ft_treat_precision(size_t len, t_data *data)
 {
-	int i;
-
-	i = -1;
-	if (data->wi)
+	if (data->width > data->precision)
 	{
 		data->len = data->width - data->precision;
-		printf("data->len width precision: %i\n", data->len);
+		printf("treat_prec = data->len : %i\n", data->len); 
 		ft_treat_width(data);
+		data->len = data->precision - len;
 	}
-	data->len = data->precision - len;
-	while (++i < data->len)
+	else
+		data->len = data->precision - len;
+	if (data->sign == 1)
+		ft_putchar('-', data);
+	while (data->len)
+	{
+
 		ft_putchar('0', data);
+		data->len--;
+	}
 }

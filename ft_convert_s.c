@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 14:36:29 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/02/24 22:01:47 by Sophie           ###   ########.fr       */
+/*   Updated: 2021/02/25 09:54:26 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_convert_s(va_list ap, t_data *data)
 		printf("%i\n", data->width);
 		printf("there are flags bitch !\n");
 		len = ft_treat_str_prec(arg, data);
-		data->len = data->width - len; 
+			data->len = data->width - len; 
 		if (data->minus && data->width)
 			ft_putnstr(arg, len, data);
 		ft_treat_width(data);
