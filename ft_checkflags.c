@@ -64,9 +64,8 @@ void	ft_treat_digit_flag(const char *format, t_data *data)
 	{
 		data->wi = 1;
 		data->width = ft_atoi(&format[data->i]);//convertir atoi
-		printf("width 1 : %i\n", data->width);
 		if (data->width > 9)
 			data->i += (ft_intlen(data->width) -1);		
-		printf("width 2: %i\n", data->width);
+		printf("width : %i\n", data->width);
 	}
 }

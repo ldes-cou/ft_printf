@@ -1,7 +1,7 @@
-#include "libftprintf.h"
-size_t		ft_intlen(int n)
+#include "libft.h"
+int		ft_intlen(int n)
 {
-	size_t		len;
+	int		len;
 
 	len = 0;
 	if (!n)

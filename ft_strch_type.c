@@ -1,5 +1,5 @@
 #include "libftprintf.h"
-char	ft_strchr_type(char *str, char c)
+/*char	ft_strchr_type(char *str, char c)
 {
 	int i;
 	
@@ -11,4 +11,4 @@ char	ft_strchr_type(char *str, char c)
 		i++;
 	}
 	return (0);
-}
+}*/

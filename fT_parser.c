@@ -6,7 +6,7 @@
 /*   By: ldes-cou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 14:55:41 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/02/24 12:12:03 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/02/26 14:38:03 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,22 @@ void ft_tab(const char *str, va_list *ap, t_data *data)
 		}
 		else
 		{
-			ft_putchar(str[data->i], data); //comment traiter les flags sans les afficher ?? 
+			ft_putchar(str[data->i], data);  
 		}
 		data->i++;
 	}
-}	
+}
+
+void	ft_init_struct(t_data *data)
+{
+	data->width = 0;
+	data->precision = 0;
+	data->len = 0;
+	data->i = 0;
+	data->count = 0;
+	data->minus = 0;
+	data->zero = 0;
+	data->dot = 0;
+	data->wi = 0;
+	data->sign = 0;
+}
