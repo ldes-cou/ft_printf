@@ -56,7 +56,7 @@ void	ft_treat_wildcard(const char *format, va_list ap, t_data *data);
 int		ft_parse_type(const char *str, t_data *data);
 /*handler*/
 void	ft_treat_width(t_data *data);
-int		ft_treat_int(int nb, t_data *data);
+int		ft_treat_int_neg(int nb, t_data *data);
 void	ft_treat_precision(size_t len, t_data *data);
 int		ft_treat_str_prec(char *str, t_data *data);
 /*conversions*/
