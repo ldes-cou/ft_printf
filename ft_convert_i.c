@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 10:37:51 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/02/26 12:19:49 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/02 14:29:35 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@ void	ft_convert_i(va_list ap, t_data *data)
 	data->arg = ft_itoa(va_arg(ap, int));		
 	n = ft_atoi(data->arg);
 	n = ft_treat_int_neg(n, data);
-	printf("n = %i\n", n);
+	//printf("n = %i\n", n);
 	//printf("sign = %i\n", data->sign);
 	len_nb = (int)(ft_intlen(n));
-	//printf("data->arg : %s\n", data->arg);
+	/*printf("data->arg : %s\n", data->arg);
 	printf("%i\n", data->minus);
 	printf("%i\n", data->zero);
 	printf("%i\n", data->precision);
 	printf("%i\n", data->width);
-	printf("there are flags bitch !\n");
+	printf("there are flags bitch !\n");*/
 	data->len = data->width - ft_intlen(n);
 	//printf("data->len : %i\n", data->len);
 	//mettre une condition si intlen < width ou < precision
@@ -67,7 +67,7 @@ int	ft_treat_int_neg(int nb, t_data *data)
 	{
 		nb *= -1;
 		data->sign = 1;
-		printf("data->sign : %i\n", data->sign);
+		//printf("data->sign : %i\n", data->sign);
 	}
 	return (nb);
 }

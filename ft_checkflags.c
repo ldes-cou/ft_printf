@@ -12,11 +12,13 @@ void	ft_init_flags(const char *format, va_list ap, t_data *data)
 		data->minus = 1;
 		data->i++;
 	}
-	printf("width flag 0: %i\n", data->width);
+	//printf("width flag 0: %i\n", data->width);
 	while (format[data->i])
 	{
-		if (ft_isdigit(format[data->i]))
+		if (ft_isdigit(format[data->i]))//ici ne traite pas la precision sil y a juste un point
 			ft_treat_digit_flag(format, data);
+		if (format[data->i] == '.')
+				data->dot = 1;
 		if (format[data->i] == '*')
 			ft_treat_wildcard(format, ap, data);
 		if (ft_is_type(format[data->i]))
@@ -41,12 +43,13 @@ void	ft_treat_wildcard(const char *format, va_list ap, t_data *data)
 	{
 		data->dot = 1;
 		data->precision = va_arg(ap, int);
-		printf("precision : %i\n", data->precision);
+		//printf("precision : %i\n", data->precision);
+		//printf("data->dot : %i\n", data->dot);
 	}
 	else
 	{
-		data->width = va_arg(ap, int);//faire la conversion atoi dans la fonction
-		printf("width : %i\n", data->width);
+		data->width = va_arg(ap, int);
+		//printf("width : %i\n", data->width);
 	}
 }
 	
@@ -58,7 +61,8 @@ void	ft_treat_digit_flag(const char *format, t_data *data)
 		data->precision = ft_atoi(&format[data->i]);
 		if (data->precision > 9)
 			data->i += (ft_intlen(data->precision) - 1);		
-		printf("precision : %i\n", data->precision);
+		//printf("precision : %i\n", data->precision);
+		//printf("data->dot : %i\n", data->dot);
 	}
 	else
 	{
@@ -66,6 +70,6 @@ void	ft_treat_digit_flag(const char *format, t_data *data)
 		data->width = ft_atoi(&format[data->i]);//convertir atoi
 		if (data->width > 9)
 			data->i += (ft_intlen(data->width) -1);		
-		printf("width : %i\n", data->width);
+		//printf("width : %i\n", data->width);
 	}
 }

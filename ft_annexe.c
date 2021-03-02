@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 10:58:38 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/02/17 17:30:08 by Sophie           ###   ########.fr       */
+/*   Updated: 2021/03/02 15:28:51 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,8 @@ void	ft_putchar(char c, t_data *data)
 
 void	ft_putstr(char *str, t_data *data)
 {
-	while (*str)
-	{
-		ft_putchar(*str, data);
-		str++;
-	}
+	write(1, str, ft_strlen(str));
+	data->count = data->count + ft_strlen(str);
 }
 
 void	ft_putnbr(int nb, t_data *data)
