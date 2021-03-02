@@ -18,7 +18,7 @@ void	ft_init_flags(const char *format, va_list ap, t_data *data)
 		if (ft_isdigit(format[data->i]))//ici ne traite pas la precision sil y a juste un point
 			ft_treat_digit_flag(format, data);
 		if (format[data->i] == '.')
-				data->dot = 1;
+			data->dot = 1;
 		if (format[data->i] == '*')
 			ft_treat_wildcard(format, ap, data);
 		if (ft_is_type(format[data->i]))
