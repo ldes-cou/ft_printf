@@ -6,7 +6,7 @@
 #    By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/26 13:44:24 by ldes-cou          #+#    #+#              #
-#    Updated: 2021/02/26 15:27:48 by ldes-cou         ###   ########.fr        #
+#    Updated: 2021/03/02 09:31:24 by Sophie           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 LIBFT = libft/libft.a
@@ -37,10 +37,11 @@ $(NAME):	${OBJS}
 
 all:	${NAME}
 
-clean:
+clean: $(MAKE) clean -C ./libft
 	${RM} ${OBJS}
 
-fclean: clean
+fclean: $(MAKE) fclean -C ./libft
+	clean
 	${RM} ${NAME}
 re: fclean all
 
