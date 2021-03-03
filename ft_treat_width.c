@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 10:40:19 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/03 16:25:30 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/03 21:59:17 by Sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_treat_width(t_data *data)
 		{
 			//printf("treat_wi :data->sign : %i\n", data->sign);
 			ft_putchar('-', data);
-			data->len--;
+			//data->len--;
 			//printf("treat_wi :data->len : %i\n", data->len);
 		}
 		while (++i < data->len)

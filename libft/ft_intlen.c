@@ -6,6 +6,8 @@ int		ft_intlen(int n)
 	len = 0;
 	if (!n)
 		len++;
+	if (n < 0)
+		len++;
 	while (n)
 	{
 		n = n / 10;

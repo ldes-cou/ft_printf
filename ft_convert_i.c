@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 14:40:30 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/03 16:32:07 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/03 22:03:25 by Sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	ft_convert_i(va_list ap, t_data *data)
 	n = 0;
 	data->arg = ft_itoa(va_arg(ap, int));		
 	n = ft_atoi(data->arg);
+	//printf("n = %i\n", n);
 	if (ft_check_flags(data))
 	{
 		n = ft_treat_int_neg(n, data);
@@ -33,6 +34,9 @@ void	ft_convert_i(va_list ap, t_data *data)
 		printf("%i\n", data->width);
 		printf("there are flags bitch !\n");*/
 		data->len = data->width - len_nb;
+		if (data->sign)
+			data->len -= 1;
+		//printf("sign = %i\n", data->sign);
 		//printf("data->len : %i\n", data->len);
 		//mettre une condition si intlen < width ou < precision
 		if (data->precision < len_nb || ((data->wi > data->dot) && !data->zero))
