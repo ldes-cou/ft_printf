@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 14:36:29 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/02 22:34:35 by Sophie           ###   ########.fr       */
+/*   Updated: 2021/03/03 14:34:40 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,26 @@ void	ft_convert_s(va_list ap, t_data *data)
 		len = ft_treat_str_prec(arg, data);
 		data->len = data->width - len;
 		if (data->minus && data->width)
+		{
 			ft_putnstr(arg, len, data);
-		if (data->width > (int)ft_strlen(arg))
+			//printf("1");
+		}
+		if (data->width > (int)len)
+		{
 			ft_treat_width(data);
-		if (!data->minus)
+			//printf("2");
+		}
+
+		if(!data->minus || (data->minus && !data->width))
+		{
 			ft_putnstr(arg, len, data);
+			//printf("3");
+		}
 	}
 	else
 	{
 		ft_putstr(arg, data);
+			//printf("4");
 		//printf("here");
 	}
 }

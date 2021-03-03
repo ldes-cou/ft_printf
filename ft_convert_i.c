@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_convert_i.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldes-cou <ldes-cou@student.fr>             +#+  +:+       +#+        */
+/*   By: ldes-cou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/12 10:37:51 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/02 14:29:35 by ldes-cou         ###   ########.fr       */
+/*   Created: 2021/03/03 14:39:18 by ldes-cou          #+#    #+#             */
+/*   Updated: 2021/03/03 14:39:20 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,9 @@ int	ft_treat_int_neg(int nb, t_data *data)
 	if (nb < 0 && (data->dot || (data->zero && data->width)))
 	{
 		nb *= -1;
-		data->sign = 1;
+		if (data->type == 'i')
+			data->sign = 1;
+		//printf("data->type :%c", data->precision);
 		//printf("data->sign : %i\n", data->sign);
 	}
 	return (nb);
