@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 13:51:20 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/04 16:03:38 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/04 22:17:31 by Sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int ft_printf(const char *format, ...)
 	int ret_moi;
 	int ret_vrai;
 	
-	i = -94827;
+	i = -54;
 	//d = "world";
 	//e = "you";
 	//f = "lol";

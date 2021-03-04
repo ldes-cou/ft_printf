@@ -6,7 +6,7 @@
 /*   By: ldes-cou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 14:37:38 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/04 16:05:21 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/04 21:50:47 by Sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_treat_precision(size_t len, t_data *data)
 		ft_treat_width(data);
 	}
 	ilen = data->precision - len;	
-	if (data->sign == 1 && (data->dot || data->zero))
+	if (data->sign == 1 && (data->dot || (data->zero && !data->dot)))
 	{
 		//printf("data->sign : %i\n", data->sign);
 		ft_putchar('-', data);
