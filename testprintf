@@ -1,0 +1,8 @@
+//printf("sign = %i\n", data->sign);
+		//printf("data->len : %i\n", data->len);	/*printf("data->arg : %s\n", data->arg);
+		printf("%i\n", data->minus);
+		printf("%i\n", data->zero);
+		printf("%i\n", data->precision);
+		printf("%i\n", data->width);
+		printf("there are flags bitch !\n");*/	//printf("n = %i\n", n);
+		//printf("sign = %i\n", data->sign);	//printf("n = %i\n", n);
