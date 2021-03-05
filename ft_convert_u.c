@@ -6,7 +6,7 @@
 /*   By: Sophie <ldes-cou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 14:34:27 by Sophie            #+#    #+#             */
-/*   Updated: 2021/03/05 17:58:52 by Sophie           ###   ########.fr       */
+/*   Updated: 2021/03/05 21:28:46 by Sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,29 @@
 
 void	ft_convert_u(va_list ap, t_data *data)
 {
-	ft_putnbr_u(va_arg(ap, int), data);
+	char *display;
+	int	len_str;
+
+	data->u_arg = (va_arg(ap, unsigned int));
+	display = ft_utoa(data->u_arg);
+	if (!ft_check_flags(data))
+		ft_putstr(display, data);
+	else
+	{
+		len_str = ft_strlen(display);
+		data->len = data->width - len_str;
+		if (data->precision < len_str || ((data->wi > data->dot) && !data->zero))
+			ft_treat_unsigned_int(display, len_str, data);
+		else
+		{
+			ft_treat_precision(len_str, data);
+			if (data->dot && data->precision == 0 && data->u_arg == 0)
+					ft_putchar(' ', data);
+			else
+				ft_putstr(display, data);
+			if (data->minus && data->width > len_str)
+				ft_treat_width(data);
+		}
+	}
+	free(display);
 }
