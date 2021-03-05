@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 14:40:30 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/04 22:16:29 by Sophie           ###   ########.fr       */
+/*   Updated: 2021/03/05 18:02:51 by Sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,40 +27,8 @@ void	ft_convert_i(va_list ap, t_data *data)
 		data->len = data->width - len_nb;
 		if (data->sign)
 			data->len -= 1;
-		
-
 		if (data->precision < len_nb || ((data->wi > data->dot) && !data->zero))
-		{	
-		
-			if (data->len < 0 || data->minus)
-			{	
-				if (data->dot && data->precision == 0 && n == 0)
-				{
-					ft_putstr("", data);
-					data->len++;
-				}
-				else
-					ft_putnbr(n, data);
-				if (data->width > len_nb)
-					ft_treat_width(data);
-
-			}
-			else
-			{	
-				//printf("here");
-				if (!data->precision)
-				{
-					n = ft_treat_int_neg(n, data);
-					len_nb = (int)(ft_intlen(n));
-					data->len = data->width - len_nb;
-				}
-				ft_treat_width(data);
-				if (data->dot && data->precision == 0 && n == 0)
-					ft_putchar(' ', data);
-				else
-					ft_putnbr(n, data);
-			}
-		}
+			ft_treat_int(n, len_nb, data);
 		else
 		{
 			n = ft_treat_int_neg(n, data);
@@ -78,6 +46,36 @@ void	ft_convert_i(va_list ap, t_data *data)
 	else
 		ft_putnbr(n, data);
 }		
+
+void	ft_treat_int(int n, int len_nb, t_data *data)
+{
+	if (data->len < 0 || data->minus)
+	{	
+		if (data->dot && data->precision == 0 && n == 0)
+		{
+			ft_putstr("", data);
+			data->len++;
+		}
+		else
+			ft_putnbr(n, data);
+		if (data->width > len_nb)
+			ft_treat_width(data);
+	}
+	else
+	{	
+		if (!data->precision)
+		{
+			n = ft_treat_int_neg(n, data);
+			len_nb = (int)(ft_intlen(n));
+			data->len = data->width - len_nb;
+		}
+		ft_treat_width(data);
+		if (data->dot && data->precision == 0 && n == 0)
+			ft_putchar(' ', data);
+		else
+			ft_putnbr(n, data);
+	}
+}
 
 int	ft_treat_int_neg(int nb, t_data *data)
 {

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   annexe.c                                           :+:      :+:    :+:   */
+/*   ft_annexe.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 10:58:38 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/02 15:28:51 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/05 20:58:25 by Sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,18 @@ void		ft_putnbr_base(int nbr, char *base, t_data *data)
 	}
 	else
 		ft_putchar(base[dividende % size_base], data);
+}
+
+char	*ft_strtoupper(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (ft_isalpha(str[i]))
+			str[i] -= 32;
+		i++;
+	}
+	return (str);
 }

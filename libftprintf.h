@@ -19,6 +19,7 @@ char		buf[BUFFER_SIZE];
 
 typedef struct s_data
 {
+	unsigned int	u_arg;
 	char	*arg;
 	int		width;
 	int		wi;//peut etre vire le 0 n'a pas d'incidence
@@ -42,22 +43,25 @@ void	ft_putstr(char *str, t_data *data);
 void	ft_putnbr_base(int nbr, char *base, t_data *data);
 char	ft_strchr_type(char *str, char c);
 void	ft_putnstr(char *str, size_t n, t_data *data);
+char	*ft_strtoupper(char *str);
 /*initialisation*/
 void	ft_tab(const char *str, va_list *ap, t_data *data);
 void	ft_init_struct(t_data *data);
 void	ft_init_type(t_data *data);
 void	ft_init_flags(const char *format, va_list ap, t_data *data);
 /*parser*/
-int		ft_check_flags(t_data *data);
-int		ft_is_type(char c);
+int	ft_check_flags(t_data *data);
+int	ft_is_type(char c);
 void	ft_treat_digit_flag(const char *format, t_data *data);
 void	ft_treat_wildcard(const char *format, va_list ap, t_data *data);
-int		ft_parse_type(const char *str, t_data *data);
+int	ft_parse_type(const char *str, t_data *data);
 /*handler*/
 void	ft_treat_width(t_data *data);
-int		ft_treat_int_neg(int nb, t_data *data);
+int	ft_treat_int_neg(int nb, t_data *data);
 void	ft_treat_precision(size_t len, t_data *data);
-int		ft_treat_str_prec(char *str, t_data *data);
+int	ft_treat_str_prec(char *str, t_data *data);
+void	ft_treat_unsigned_int(char *str, int len_nb, t_data *data);
+void	ft_treat_int(int n, int len_nb, t_data *data);
 /*conversions*/
 void	ft_convert_s(va_list ap, t_data *data);
 void	ft_convert_i(va_list ap, t_data *data);

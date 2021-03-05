@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 11:11:53 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/03 13:18:53 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/05 17:55:32 by Sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	ft_init_struct(t_data *data)
 	data->width = 0;
 	data->precision = 0;
 	data->len = 0;
-	 data->minus = 0;
+	data->minus = 0;
 	data->zero = 0;
 	data->dot = 0;
 	data->wi = 0;
