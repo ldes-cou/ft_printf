@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 11:23:11 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/06 11:23:15 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/06 15:08:54 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,13 @@ void	ft_treat_wildcard(const char *format, va_list ap, t_data *data)
 	}
 	else
 	{
+		data->wi = 1;
 		data->width = va_arg(ap, int);
 		if (data->width < 0)
-			data->width= ft_treat_int_neg(data->width, data);
+		{
+			data->width *= -1;
+			data->minus = 1;
+		}
 		//printf("width : %i\n", data->width);
 	}
 }

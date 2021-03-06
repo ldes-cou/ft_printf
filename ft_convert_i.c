@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 14:40:30 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/06 11:23:52 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/06 14:57:28 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int	ft_treat_int_neg(int nb, t_data *data)
 	{
 		if (data->zero || data->precision > ft_intlen(nb))
 			nb *= -1;
-		if (data->type == 'i')
+		if (data->type == 'i' || data->type == 'd')
 		{
 			data->sign = 1;
 			data->len -= 1;
