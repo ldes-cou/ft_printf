@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/06 11:24:48 by ldes-cou          #+#    #+#             */
+/*   Updated: 2021/03/06 11:59:16 by ldes-cou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFTPRINTF_H
 # define LIBFTPRINTF_H
 
@@ -69,8 +81,10 @@ void	ft_convert_c(va_list ap, t_data *data);
 void	ft_convert_x_lo(va_list ap, t_data *data);
 void	ft_convert_x_up(va_list ap, t_data *data);
 void	ft_convert_u(va_list ap, t_data *data);
+void	ft_convert_p(va_list ap, t_data *data);
 void	ft_convert_percent(t_data *data);
 /*display*/
+void	ft_print_ptr(char *ptr, t_data *data);
 void	ft_init_buf(t_data *data);
 void	ft_fill_buf(char c, t_data *data);
 void	ft_display_buf(t_data *data);
