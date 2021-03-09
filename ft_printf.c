@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 13:51:20 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/06 15:06:55 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/09 15:58:40 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int ft_printf(const char *format, ...)
 	return (data.count);
 }
 
-/*int main()
+int main()
 {
 	//(void)argc;
 	//(void)argv;
@@ -45,13 +45,13 @@ int ft_printf(const char *format, ...)
 	//d = 'b';
 
 	
-	ret_moi = ft_printf("%*s", -32, "abc"); 
+	ret_moi = ft_printf("%5c", 'a'); 
 	printf("%c", '\n');
-	ret_vrai = printf("%*s", -32, "abc");
+	ret_vrai = printf("%.c", 'a');
 	printf("%c", '\n');
    	printf("ma f°:%i\nla vraie f°:%i\n",ret_moi, ret_vrai);
 	return (0);
-}*/
+}
 /*int main()
 {
 	//(void)argc;

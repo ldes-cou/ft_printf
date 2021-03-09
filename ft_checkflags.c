@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 11:23:11 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/06 15:08:54 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/09 15:59:07 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	ft_init_flags(const char *format, va_list ap, t_data *data)
 }
 int	ft_check_flags(t_data *data)
 {
-	if (data->minus || data->zero || data->dot || data->wi)
+	if (data->dot || data->wi)
 		return (1);
 	return (0);
 }
