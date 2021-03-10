@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 10:40:19 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/10 09:57:59 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/10 15:36:58 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,13 @@ void	ft_treat_width(t_data *data)
 		{
 			//printf("treat_wi :data->sign : %i\n", data->sign);
 			ft_putchar('-', data);
-			data->len--;
+			//data->len--;
 			//printf("treat_wi :data->len : %i\n", data->len);
 		}
 		if ((data->type == 'i' || data->type == 'd') && data->zero && data->precision)
 		{
 			while (++i < data->len)
 				ft_putchar(' ', data);
-
 		}	
 		else
 		{
@@ -42,8 +41,8 @@ void	ft_treat_width(t_data *data)
 	}
 	else
 	{
-		if (data->sign && (data->type == 'i' || data->type == 'd') && !data->minus)
-				data->len--;
+		//if (data->sign && (data->type == 'i' || data->type == 'd') && !data->minus)
+		//	data->len--;
 		while (data->len)
 		{
 			ft_putchar(' ', data);

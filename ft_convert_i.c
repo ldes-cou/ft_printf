@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 14:40:30 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/10 10:31:37 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/10 15:47:02 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,17 @@ void	ft_convert_i(va_list ap, t_data *data)
 	{
 		
 		len_nb = (int)(ft_intlen(n));
+		n = ft_treat_int_neg(n, data);
+		//printf("len_nb = %i\n", len_nb);
 		data->len = data->width - len_nb;
-		if (data->sign)
-			data->len -= 1;
+		//printf("data->len = %i\n", data->len);
 		if (data->precision < len_nb || ((data->wi > data->dot) && !data->zero))
 			ft_treat_int(n, len_nb, data);
 		else
 		{
-			n = ft_treat_int_neg(n, data);
+			/*n = ft_treat_int_neg(n, data);
 			len_nb = (int)(ft_intlen(n));
-			data->len = data->width - len_nb;
+			data->len = data->width - len_nb;*/
 			ft_treat_precision(len_nb, data);
 			if (data->dot && data->precision == 0 && n == 0)
 					ft_putchar(' ', data);
@@ -49,7 +50,7 @@ void	ft_convert_i(va_list ap, t_data *data)
 
 void	ft_treat_int(int n, int len_nb, t_data *data)
 {
-	if (data->len < 0 || data->minus)
+	if (data->len <= 0 || data->minus)
 	{	
 		if (data->dot && data->precision == 0 && n == 0)
 		{
@@ -63,12 +64,12 @@ void	ft_treat_int(int n, int len_nb, t_data *data)
 	}
 	else
 	{	
-		if (!data->precision)
+		/*if (!data->precision)
 		{
 			n = ft_treat_int_neg(n, data);
 			len_nb = (int)(ft_intlen(n));
 			data->len = data->width - len_nb;
-		}
+		}*/
 		ft_treat_width(data);
 		if (data->dot && data->precision == 0 && n == 0)
 			ft_putchar(' ', data);
@@ -77,20 +78,22 @@ void	ft_treat_int(int n, int len_nb, t_data *data)
 	}
 }
 
-int	ft_treat_int_neg(int nb, t_data *data)
+int	ft_treat_int_neg(int n, t_data *data)
 {
-	if (nb < 0 && (data->dot || (data->zero && data->width)))
+	long nb;
+
+	nb = (long)n;
+	//printf("n : %i\n", n);
+	if (nb < 0)
 	{
-		if (data->zero || data->precision > ft_intlen(nb))
+		data->len -= 1;
+		if ((data->zero && data->width > ft_intlen(nb)) || data->precision >= ft_intlen(nb))
 			nb *= -1;
 		if (data->type == 'i' || data->type == 'd')
-		{
-			data->sign = 1;
-			data->len -= 1;
-		}
-		//printf("data->type :%c", data->precision);
-		//printf("data->sign : %i\n", data->sign);
+			data->sign = 1;	
 	}
+		//printf("nb : %li\n", nb);
+		//printf("data->sign : %i\n", data->sign);
 return (nb);
 }
 

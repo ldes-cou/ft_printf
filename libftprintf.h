@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 11:24:48 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/10 09:59:57 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/10 14:25:48 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typedef struct s_data
 	int		minus;
 	int		zero;
 	int		len;
-	int		i;
+	size_t		i;
 	int		sign;
 	char	type;
 	int		count;
