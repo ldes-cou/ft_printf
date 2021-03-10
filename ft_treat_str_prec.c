@@ -3,9 +3,10 @@
 int		ft_treat_str_prec(char *str, t_data *data)
 {
 	size_t strlen;
- 
+
+ 	strlen = (int)ft_strlen(str);
 	//printf("data->precision%i", data->precision);
-	if (data->dot && (data->precision < (int)ft_strlen(str)))
+	if (data->dot && (data->precision < (int)strlen))
 		strlen = data->precision;
 	else
 		strlen = ft_strlen(str);

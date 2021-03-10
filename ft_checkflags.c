@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 11:23:11 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/09 15:59:07 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/10 10:31:55 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,16 @@ int	ft_check_flags(t_data *data)
 
 void	ft_treat_wildcard(const char *format, va_list ap, t_data *data)
 {
+	data->wild = 1;
 	if (format[data->i - 1] == '.')
 	{
 		data->dot = 1;
 		data->precision = va_arg(ap, int);
 		if (data->precision < 0)
 		{
-			data->precision = ft_treat_int_neg(data->precision, data);
 			data->dot = 0;
-		}		
+			data->precision = 0;
+		}
 		//printf("precision : %i\n", data->precision);
 		//printf("data->dot : %i\n", data->dot);
 	}

@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 11:24:48 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/06 14:57:39 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/10 09:59:57 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ typedef struct s_data
 	int		sign;
 	char	type;
 	int		count;
+	int		wild;
 	f		fun_array[9];
 }				t_data;
 

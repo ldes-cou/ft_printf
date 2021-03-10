@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 14:36:29 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/06 11:47:41 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/10 10:37:13 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	ft_convert_s(va_list ap, t_data *data)
 		printf("%i\n", data->zero);
 		printf("%i\n", data->precision);
 		printf("%i\n", data->width);
+		printf("%i\n", data->dot);
 		printf("there are flags bitch !\n");*/
 		len = ft_treat_str_prec(arg, data);
 		data->len = data->width - len;
@@ -41,7 +42,6 @@ void	ft_convert_s(va_list ap, t_data *data)
 			ft_treat_width(data);
 			//printf("2");
 		}
-
 		if(!data->minus || (data->minus && !data->width))
 		{
 			ft_putnstr(arg, len, data);
