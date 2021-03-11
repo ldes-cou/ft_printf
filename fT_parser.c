@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parser.c                                        :+:      :+:    :+:   */
+/*   fT_parser.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 11:11:53 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/10 14:50:28 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/11 21:02:55 by Sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void ft_tab(const char *str, va_list *ap, t_data *data)
 			else if (str[data->i] == '%')
 				data->fun_array[7](data);
 		}
-		else if (str[data->i] != '\0' && data->i < len)
+		else if (str[data->i] && data->i < len)
 		{
 			ft_putchar(str[data->i], data);
 		}

@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 14:13:12 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/10 11:31:14 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/11 21:07:28 by Sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	ft_convert_x_lo(va_list ap, t_data *data)
 
 	data->u_arg = (va_arg(ap, unsigned int));
 	display = ft_itoa_base(data->u_arg, 16);
+	//printf("display : %s\n", display);
 	if (!ft_check_flags(data))
 		ft_putstr(display, data);
 	else
@@ -34,7 +35,7 @@ void	ft_convert_x_lo(va_list ap, t_data *data)
 					ft_putchar(' ', data);
 			else
 				ft_putstr(display, data);
-			if (data->minus && data->width > len_str)
+			if (data->minus && data->width > len_str && data->width >= data->precision)
 				ft_treat_width(data);
 		}
 	}
@@ -52,12 +53,12 @@ void	ft_treat_unsigned_int(char *display, int len_str, t_data *data)
 		}
 		else
 			ft_putstr(display, data);	
-		if (data->width > len_str)
+		if (data->width >= len_str)
 			ft_treat_width(data);
 	}
 	else
 	{
-		if (!data->dot || (data->precision < data->len))
+		if (!data->dot || (data->precision <= data->width))
 			ft_treat_width(data);
 		if (data->dot && data->precision == 0 && data->u_arg == 0)
 			ft_putchar(' ', data);

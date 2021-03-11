@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 11:23:11 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/10 10:31:55 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/11 20:54:27 by Sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,13 @@ void	ft_init_flags(const char *format, va_list ap, t_data *data)
 	if (format[data->i] == '-')
 	{
 		data->minus = 1;
-		data->i++;
+		//printf("data->i : %zu\n", data->i);
+		while (format[data->i] == '-')
+		{
+			data->i++;
+			//printf("data->i : %zu\n", data->i);
+		}
+
 	}
 	//printf("width flag 0: %i\n", data->width);
 	while (format[data->i])
@@ -82,8 +88,8 @@ void	ft_treat_digit_flag(const char *format, t_data *data)
 	{
 		data->wi = 1;
 		data->width = ft_atoi(&format[data->i]);
-		if (data->width < 0)
-			data->width= ft_treat_int_neg(data->width, data);
+		//if (data->width < 0)
+		//	data->width *= -1;
 		if (data->width > 9)
 			data->i += (ft_intlen(data->width) -1);		
 		//printf("width : %i\n", data->width);
