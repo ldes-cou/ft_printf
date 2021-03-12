@@ -1,4 +1,4 @@
-#include "libftprintf.h"
+#include "ft_printf.h"
 void	ft_init_buf(t_data *data)
 {
 	int i;

@@ -43,7 +43,6 @@ void	ft_putnbr_u(int, t_data *data);
 void	ft_putchar(char c, t_data *data);
 void	ft_putstr(char *str, t_data *data);
 void	ft_putnbr_base(int nbr, char *base, t_data *data);
-char	ft_strchr_type(char *str, char c);
 void	ft_putnstr(char *str, size_t n, t_data *data);
 char	*ft_strtoupper(char *str);
 /*initialisation*/
