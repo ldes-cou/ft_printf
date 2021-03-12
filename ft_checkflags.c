@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 11:23:11 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/12 10:33:03 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/12 11:25:20 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,20 @@ void	ft_init_flags(const char *format, va_list ap, t_data *data)
 		data->zero = 1;
 		while (format[data->i] == '0')
 			data->i++;
-			//printf("data->i : %zu\n", data->i);
 	}
 	if (format[data->i] == '-')
 	{
 		data->minus = 1;
-		//printf("data->i : %zu\n", data->i);
 		while (format[data->i] == '-')
 		{
 			data->i++;
-			//printf("data->i : %zu\n", data->i);
 		}
 
 	}
-	//printf("width flag 0: %i\n", data->width);
 	while (format[data->i])
 	{	if (format[data->i] == '.')
 			data->dot = 1;
-		if (ft_isdigit(format[data->i]))//ici ne traite pas la precision sil y a juste un point
+		if (ft_isdigit(format[data->i]))
 			ft_treat_digit_flag(format, data);
 		if (format[data->i] == '*')
 			ft_treat_wildcard(format, ap, data);
@@ -46,7 +42,6 @@ void	ft_init_flags(const char *format, va_list ap, t_data *data)
 			break ;
 		}
 		data->i++;
-		//printf("format init_flags: %s", format);
 	}
 }
 int	ft_check_flags(t_data *data)
@@ -68,8 +63,6 @@ void	ft_treat_wildcard(const char *format, va_list ap, t_data *data)
 			data->dot = 0;
 			data->precision = 0;
 		}
-		//printf("precision : %i\n", data->precision);
-		//printf("data->dot : %i\n", data->dot);
 	}
 	else
 	{
@@ -80,7 +73,6 @@ void	ft_treat_wildcard(const char *format, va_list ap, t_data *data)
 			data->width *= -1;
 			data->minus = 1;
 		}
-		//printf("width : %i\n", data->width);
 	}
 }
 	
@@ -90,26 +82,19 @@ void	ft_treat_digit_flag(const char *format, t_data *data)
 	{
 		data->wi = 1;
 		data->width = ft_atoi(&format[data->i]);
-		//if (data->width < 0)
-		//	data->width *= -1;
 		if (data->width > 9)
 			data->i += (ft_intlen(data->width) -1);		
-		//printf("width : %i\n", data->width);
 	}
 	else
 	{
-		//printf("format = %c\n", format[data->i]);
 		if (format[data->i] == 0)
 			data->i += 2;
 		data->precision = ft_atoi(&format[data->i]);
-		//printf("precision : %i\n", data->precision);
 		if (data->precision < 0)
 			data->dot = 0;
 		else
 			data->dot = 1;
 		if (data->precision > 9)
 			data->i += (ft_intlen(data->precision) - 1);		
-		//printf("lenprecision : %i\n", ft_intlen(data->precision));
-		//printf("data->dot : %i\n", data->dot);
 	}
 }

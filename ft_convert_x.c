@@ -6,95 +6,91 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 14:13:12 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/12 10:44:29 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/12 12:11:20 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ft_printf.h"
+#include "ft_printf.h"
 
-void	ft_convert_x_lo(va_list ap, t_data *data)
+void	ft_convert_x_lo(va_list ap, t_data *d)
 {
-	char *display;
-	int	len_str;
+	char	*display;
+	int		len_str;
 
-	data->u_arg = (va_arg(ap, unsigned int));
-	display = ft_itoa_base(data->u_arg, 16);
-	//printf("display : %s\n", display);
-	if (!ft_check_flags(data))
-		ft_putstr(display, data);
+	d->u_arg = (va_arg(ap, unsigned int));
+	display = ft_itoa_base(d->u_arg, 16);
+	if (!ft_check_flags(d))
+		ft_putstr(display, d);
 	else
 	{
 		len_str = ft_strlen(display);
-		data->len = data->width - len_str;
-		if (data->precision < len_str || ((data->wi > data->dot) && !data->zero))
-			ft_treat_unsigned_int(display, len_str, data);
+		d->len = d->width - len_str;
+		if (d->precision < len_str || ((d->wi > d->dot) && !d->zero))
+			ft_treat_unsigned_int(display, len_str, d);
 		else
 		{
-			ft_treat_precision(len_str, data);
-			if (data->dot && data->precision == 0 && data->u_arg == 0)
-					ft_putchar(' ', data);
+			ft_treat_precision(len_str, d);
+			if (d->dot && d->precision == 0 && d->u_arg == 0)
+				ft_putchar(' ', d);
 			else
-				ft_putstr(display, data);
-			if (data->minus && data->width > len_str && data->width >= data->precision)
-				ft_treat_width(data);
+				ft_putstr(display, d);
+			if (d->minus && d->width > len_str && d->width >= d->precision)
+				ft_treat_width(d);
 		}
 	}
 	free(display);
 }
 
-void	ft_treat_unsigned_int(char *display, int len_str, t_data *data)
+void	ft_treat_unsigned_int(char *display, int len_str, t_data *d)
 {
-	if (data->len < 0 || data->minus)
-	{	
-		if (data->dot && data->precision == 0 && data->u_arg == 0)
+	if (d->len < 0 || d->minus)
+	{
+		if (d->dot && d->precision == 0 && d->u_arg == 0)
 		{
-			ft_putstr("", data);
-			data->len++;
+			ft_putstr("", d);
+			d->len++;
 		}
 		else
-			ft_putstr(display, data);	
-		if (data->width >= len_str)
-			ft_treat_width(data);
+			ft_putstr(display, d);
+		if (d->width >= len_str)
+			ft_treat_width(d);
 	}
 	else
 	{
-		if (!data->dot || (data->precision <= data->width))
-			ft_treat_width(data);
-		if (data->dot && data->precision == 0 && data->u_arg == 0)
-			ft_putchar(' ', data);
+		if (!d->dot || (d->precision <= d->width))
+			ft_treat_width(d);
+		if (d->dot && d->precision == 0 && d->u_arg == 0)
+			ft_putchar(' ', d);
 		else
-			ft_putstr(display, data);
+			ft_putstr(display, d);
 	}
-
 }
 
-void	ft_convert_x_up(va_list ap, t_data *data)
+void	ft_convert_x_up(va_list ap, t_data *d)
 {
-	char 	*display;
-	int	len_str;
+	char	*display;
+	int		len_str;
 
-	data->u_arg = (va_arg(ap, unsigned int));
-	display = ft_itoa_base(data->u_arg, 16);
-	display = ft_strtoupper(display);
-	if (!ft_check_flags(data))
-		ft_putstr(display, data);
+	d->u_arg = (va_arg(ap, unsigned int));
+	display = ft_strtoupper(ft_itoa_base(d->u_arg, 16));
+	if (!ft_check_flags(d))
+		ft_putstr(display, d);
 	else
 	{
 		len_str = ft_strlen(display);
-		data->len = data->width - len_str;
-		if (data->precision < len_str || ((data->wi > data->dot) && !data->zero))
-			ft_treat_unsigned_int(display, len_str, data);
+		d->len = d->width - len_str;
+		if (d->precision < len_str || ((d->wi > d->dot) && !d->zero))
+			ft_treat_unsigned_int(display, len_str, d);
 		else
 		{
-			ft_treat_precision(len_str, data);
-			if (data->dot && data->precision == 0 && data->u_arg == 0)
-					ft_putchar(' ', data);
+			ft_treat_precision(len_str, d);
+			if (d->dot && d->precision == 0 && d->u_arg == 0)
+				ft_putchar(' ', d);
 			else
-				ft_putstr(display, data);
-			if (data->minus && data->width >= data->precision)
-				ft_treat_width(data);
+				ft_putstr(display, d);
+			if (d->minus && d->width >= d->precision)
+				ft_treat_width(d);
 		}
 	}
 	free(display);
 }
-

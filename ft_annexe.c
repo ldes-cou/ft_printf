@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 10:58:38 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/12 10:32:38 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/12 11:25:31 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,27 +54,6 @@ void	ft_putnbr_u(int nb, t_data *data)
 	}
 	else
 		ft_putchar(n + '0', data);
-}
-
-void		ft_putnbr_base(int nbr, char *base, t_data *data)
-{
-	long long int		dividende;
-	size_t			size_base;
-
-	dividende = nbr;
-	size_base = ft_strlen(base);
-	if (dividende < 0)
-	{
-		ft_putchar('-', data);
-		dividende = -dividende;
-	}
-	if (dividende >= (long long int)size_base)
-	{
-		ft_putnbr_base(dividende / size_base, base, data);
-		ft_putchar(base[dividende % size_base], data);
-	}
-	else
-		ft_putchar(base[dividende % size_base], data);
 }
 
 char	*ft_strtoupper(char *str)
