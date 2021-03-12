@@ -6,11 +6,11 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 11:22:49 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/10 15:39:40 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/12 10:40:50 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 void	ft_treat_precision(size_t len, t_data *data)
 {

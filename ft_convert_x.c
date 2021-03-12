@@ -6,11 +6,11 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 14:13:12 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/11 21:07:28 by Sophie           ###   ########.fr       */
+/*   Updated: 2021/03/12 10:44:29 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libftprintf.h"
+# include "ft_printf.h"
 
 void	ft_convert_x_lo(va_list ap, t_data *data)
 {
@@ -91,7 +91,7 @@ void	ft_convert_x_up(va_list ap, t_data *data)
 					ft_putchar(' ', data);
 			else
 				ft_putstr(display, data);
-			if (data->minus && data->width > len_str)
+			if (data->minus && data->width >= data->precision)
 				ft_treat_width(data);
 		}
 	}

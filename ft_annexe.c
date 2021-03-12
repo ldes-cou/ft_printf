@@ -6,11 +6,11 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 10:58:38 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/10 11:33:29 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/12 10:32:38 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 void	ft_putchar(char c, t_data *data)
 {

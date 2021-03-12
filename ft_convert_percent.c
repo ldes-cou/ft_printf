@@ -1,10 +1,11 @@
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 void	ft_convert_percent(t_data *data)
 {
 	char c;
 	
 	c = '%';
+	data->precision = 0;
 	if (ft_check_flags(data))
 	{
 		data->len = data->width - 1;

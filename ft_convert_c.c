@@ -6,11 +6,11 @@
 /*   By: ldes-cou <ldes-cou@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 10:35:40 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/10 10:48:14 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/12 10:41:58 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 void ft_convert_c(va_list ap, t_data *data)
 {

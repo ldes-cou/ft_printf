@@ -6,11 +6,11 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 13:51:20 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/11 21:11:37 by Sophie           ###   ########.fr       */
+/*   Updated: 2021/03/12 10:42:30 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int ft_printf(const char *format, ...)
 {
@@ -45,9 +45,9 @@ int ft_printf(const char *format, ...)
 	//d = 'b';
 
 	
-	ret_moi = ft_printf("%73.154d" ,-1185050931);
+	ret_moi = ft_printf("%026.51%");
 	printf("%c", '\n');
-	ret_vrai = printf("%--73.154d" ,-1185050931);
+	ret_vrai = printf("%026.51%");
 	printf("%c", '\n');
    	printf("ma f°:%i\nla vraie f°:%i\n",ret_moi, ret_vrai);
 	return (0);

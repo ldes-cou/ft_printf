@@ -6,18 +6,20 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 11:23:11 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/11 20:54:27 by Sophie           ###   ########.fr       */
+/*   Updated: 2021/03/12 10:33:03 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 void	ft_init_flags(const char *format, va_list ap, t_data *data)
 {	
 	if (format[data->i] == '0')
 	{
 		data->zero = 1;
-		data->i++;
+		while (format[data->i] == '0')
+			data->i++;
+			//printf("data->i : %zu\n", data->i);
 	}
 	if (format[data->i] == '-')
 	{

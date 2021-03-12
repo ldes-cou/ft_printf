@@ -6,11 +6,11 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 10:40:19 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/11 20:11:55 by Sophie           ###   ########.fr       */
+/*   Updated: 2021/03/12 10:41:22 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 void	ft_treat_width(t_data *data)
 {

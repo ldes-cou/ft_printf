@@ -6,11 +6,11 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 11:23:27 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/06 11:45:42 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/12 10:40:33 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 void	ft_init_type(t_data *data)
 {

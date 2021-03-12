@@ -1,4 +1,4 @@
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int		ft_treat_str_prec(char *str, t_data *data)
 {
