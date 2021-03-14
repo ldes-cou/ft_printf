@@ -25,6 +25,7 @@ typedef struct		s_list
 }					t_list;
 char 				*ft_strcpy(char *dest, char *src);
 char				*ft_itoa_base(long unsigned n, int base);
+int				ft_itoa_base_count(long unsigned nb, int base);
 int					ft_intlen(int n);
 char				*ft_utoa(unsigned int n);
 int					ft_atoi(const char *str);

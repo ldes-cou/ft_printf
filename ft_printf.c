@@ -6,11 +6,8 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 13:51:20 by ldes-cou          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2021/03/14 18:46:56 by Sophie           ###   ########.fr       */
-=======
+/*   Updated: 2021/03/14 22:32:18 by Sophie           ###   ########.fr       */
 /*   Updated: 2021/03/14 13:51:10 by ldes-cou         ###   ########.fr       */
->>>>>>> b7a34d2968f1cdc7c7b6d5b7b5ca75500b0e6b96
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +27,7 @@ int ft_printf(const char *format, ...)
 	return (data.count);
 }
 
-/*int main()
+int main()
 {
 	//(void)argc;
 	//(void)argv;
@@ -49,13 +46,14 @@ int ft_printf(const char *format, ...)
 	//d = 'b';
 
 	
-	ret_moi = ft_printf("%020.5d", -1024);
+	ret_moi = ft_printf("%-10.10i", 4294967295U);
 	printf("%c", '\n');
-	ret_vrai = printf("%020.5d", -1024);
+	ret_vrai = printf("%-10.10i", 4294967295U);
 	printf("%c", '\n');
    	printf("ma f°:%i\nla vraie f°:%i\n",ret_moi, ret_vrai);
 	return (0);
-}*/
+}
+
 /*int main()
 {
 	//(void)argc;

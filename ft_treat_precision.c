@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 11:22:49 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/12 10:40:50 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/14 22:26:05 by Sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_treat_precision(size_t len, t_data *data)
 	}
 	//printf("treat_prec = data->len : %i\n", data->len); 
 	ilen += (data->precision - len);
-	//printf("treat_prec = ilen %i\n", ilen); 
+	printf("treat_prec = ilen %i\n", ilen); 
 	if (data->sign == 1 && (data->dot || (data->zero && !data->dot)))
 	{
 		//printf("data->sign : %i\n", data->sign);

@@ -6,73 +6,45 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 11:21:48 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/06 11:21:52 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/14 20:42:13 by Sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "libft.h"
 
-static int	size_nbr(long unsigned n, int base)
-{
-	int				size;
-	long unsigned	nbis;
 
-	size = 0;
-	nbis = n;
-	if (nbis < 0)
+char	*ft_itoa_base(long unsigned nb, int base)
+{
+	char	*ret;
+	char	*numbers;
+	int		size;
+
+	numbers = ft_strdup("0123456789abcdef");
+	ret = NULL;
+	size = ft_itoa_base_count(nb, base);
+	if (!(ret = (char*)malloc(sizeof(char) * size + 1)))
+		return (NULL);
+	ret[size--] = '\0';
+	while (size >= 0)
 	{
-		size++;
-		nbis = -n;
+		ret[size--] = numbers[nb % base];
+		nb /= base;
 	}
-	if (nbis == 0)
+	free(numbers);
+	return (ret);
+}
+
+int	ft_itoa_base_count(long unsigned nb, int base)
+{
+	int i;
+
+	if (nb == 0)
 		return (1);
-	while (nbis > 0)
+	i = 0;
+	while (nb)
 	{
-		size++;
-		nbis = nbis / base;
+		nb = nb / base;
+		i++;
 	}
-	return (size);
+	return (i);
 }
-
-static char	*def_base(int base)
-{
-	char	*def;
-
-	def = (char *)malloc(sizeof(char) * base + 1);
-	if (!def)
-		return (NULL);
-	if (base == 16)
-		def = "0123456789abcdef";
-	else if (base == 10)
-		def = "0123456789";
-	return (def);
-}
-
-char		*ft_itoa_base(long unsigned n, int base)
-{
-	char			*nbr;
-	unsigned long	nbis;
-	char			*tab;
-	int				size;
-
-	nbis = n;
-	nbr = NULL;
-	size = size_nbr(nbis, base);
-	tab = def_base(base);
-	if (n == 0)
-		return (ft_strdup("0"));
-	nbr = (char *)malloc(size * sizeof(char) + 1);
-	if (!nbr)
-		return (NULL);
-	nbr[size] = '\0';
-	if (n < 0)
-		n = -n;
-	while (nbis > 0)
-	{
-		nbr[size - 1] = tab[nbis % base];
-		nbis = nbis / base;
-		size--;
-	}
-	return (nbr);
-}
-

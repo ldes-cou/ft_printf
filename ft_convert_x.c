@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 14:13:12 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/12 12:11:20 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/14 21:41:40 by Sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 
 void	ft_convert_x_lo(va_list ap, t_data *d)
 {
-	char	*display;
+	char		*display;
 	int		len_str;
 
-	d->u_arg = (va_arg(ap, unsigned int));
-	display = ft_itoa_base(d->u_arg, 16);
+	d->u_arg = va_arg(ap, unsigned int);
+	if (d->dot && d->precision == 0 && d->u_arg == 0)
+		display = ft_strdup("");
+	else
+		display = ft_itoa_base(d->u_arg, 16);
 	if (!ft_check_flags(d))
 		ft_putstr(display, d);
 	else
@@ -30,10 +33,7 @@ void	ft_convert_x_lo(va_list ap, t_data *d)
 		else
 		{
 			ft_treat_precision(len_str, d);
-			if (d->dot && d->precision == 0 && d->u_arg == 0)
-				ft_putchar(' ', d);
-			else
-				ft_putstr(display, d);
+			ft_putstr(display, d);
 			if (d->minus && d->width > len_str && d->width >= d->precision)
 				ft_treat_width(d);
 		}
@@ -45,13 +45,7 @@ void	ft_treat_unsigned_int(char *display, int len_str, t_data *d)
 {
 	if (d->len < 0 || d->minus)
 	{
-		if (d->dot && d->precision == 0 && d->u_arg == 0)
-		{
-			ft_putstr("", d);
-			d->len++;
-		}
-		else
-			ft_putstr(display, d);
+		ft_putstr(display, d);
 		if (d->width >= len_str)
 			ft_treat_width(d);
 	}
@@ -59,20 +53,20 @@ void	ft_treat_unsigned_int(char *display, int len_str, t_data *d)
 	{
 		if (!d->dot || (d->precision <= d->width))
 			ft_treat_width(d);
-		if (d->dot && d->precision == 0 && d->u_arg == 0)
-			ft_putchar(' ', d);
-		else
-			ft_putstr(display, d);
+		ft_putstr(display, d);
 	}
 }
 
 void	ft_convert_x_up(va_list ap, t_data *d)
 {
-	char	*display;
+	char		*display;
 	int		len_str;
 
 	d->u_arg = (va_arg(ap, unsigned int));
-	display = ft_strtoupper(ft_itoa_base(d->u_arg, 16));
+	if (d->dot && d->precision == 0 && d->u_arg == 0)
+		display = ft_strdup("");
+	else
+		display = ft_strtoupper(ft_itoa_base(d->u_arg, 16));
 	if (!ft_check_flags(d))
 		ft_putstr(display, d);
 	else
@@ -84,10 +78,7 @@ void	ft_convert_x_up(va_list ap, t_data *d)
 		else
 		{
 			ft_treat_precision(len_str, d);
-			if (d->dot && d->precision == 0 && d->u_arg == 0)
-				ft_putchar(' ', d);
-			else
-				ft_putstr(display, d);
+			ft_putstr(display, d);
 			if (d->minus && d->width >= d->precision)
 				ft_treat_width(d);
 		}

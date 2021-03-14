@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 10:40:19 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/12 10:41:22 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/14 22:16:01 by Sophie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_treat_width(t_data *data)
 
 	i = -1;
 
-	if ((data->zero && !data->precision) && !data->minus)
+	if ((data->zero && !data->dot) && !data->minus)
 	{
 		if (data->sign == 1)
 		{
@@ -29,6 +29,7 @@ void	ft_treat_width(t_data *data)
 		if ((data->type == 'i' || data->type == 'd') && data->zero && data->precision)
 		{
 			while (++i < data->len)
+	
 				ft_putchar(' ', data);
 		}	
 		else

@@ -12,6 +12,7 @@
 #define TYPE "cspdiuxX%"
 #define HEXA_LO "0123456789abcdef"
 #define	HEXA_UP	"0123456789ABCDEF"
+#define UINT_MAX   4294967295U
 #define BUFFER_SIZE 4096
 
 //definir les types dans la structure pour iterer dedans 
