@@ -37,6 +37,7 @@ typedef struct s_data
 	f		fun_array[9];
 }				t_data;
 
+int		ft_printf(const char *format, ...);
 /*utils*/
 void	ft_putnbr(int, t_data *data);
 void	ft_putnbr_u(int, t_data *data);
