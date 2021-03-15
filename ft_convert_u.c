@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 11:24:06 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/14 21:42:03 by Sophie           ###   ########.fr       */
+/*   Updated: 2021/03/15 10:49:31 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_convert_u(va_list ap, t_data *d)
 {
-	char		*display;
+	char	*display;
 	int		len_str;
 
 	d->u_arg = (va_arg(ap, unsigned int));

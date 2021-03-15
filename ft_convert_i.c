@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 14:40:30 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/14 22:04:09 by Sophie           ###   ########.fr       */
+/*   Updated: 2021/03/15 12:01:47 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 void	ft_convert_i(va_list ap, t_data *d)
 {
-	long long n;
-	int	len;
+	long long	n;
+	int			len;
 
-	n = va_arg(ap, int);		
+	n = va_arg(ap, int);
 	d->arg = ft_itoa(n);
-	
 	if (d->dot && d->precision == 0 && n == 0)
 		len = 0;
 	else
@@ -29,7 +28,7 @@ void	ft_convert_i(va_list ap, t_data *d)
 	else
 		ft_putstr(d->arg, d);
 	free(d->arg);
-}		
+}
 
 void	ft_handle_flags(int n, int len, t_data *d)
 {
@@ -55,7 +54,7 @@ void	ft_handle_flags(int n, int len, t_data *d)
 void	ft_handle_width(int n, int len, t_data *d)
 {
 	if (d->len <= 0 || d->minus)
-	{	
+	{
 		if (d->dot && d->precision == 0 && n == 0)
 			ft_putstr("", d);
 		else
@@ -79,16 +78,14 @@ void	ft_handle_width(int n, int len, t_data *d)
 	}
 }
 
-int	ft_treat_int_neg(int n, int len, t_data *d)
+int		ft_treat_int_neg(int n, int len, t_data *d)
 {
-
 	if (n < 0)
 	{
 		if (!((d->zero && d->width > len) && ((d->precision < len) && d->dot)))
 			n *= -1;
 		if (d->type == 'i' || d->type == 'd')
-			d->sign = 1;	
+			d->sign = 1;
 	}
 	return (n);
 }
-

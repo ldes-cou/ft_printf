@@ -1,4 +1,3 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -7,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 11:01:48 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/05 17:44:41 by Sophie           ###   ########.fr       */
+/*   Updated: 2021/03/15 11:57:04 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +22,9 @@ typedef struct		s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
-char 				*ft_strcpy(char *dest, char *src);
+char				*ft_strcpy(char *dest, char *src);
 char				*ft_itoa_base(long unsigned n, int base);
-int				ft_itoa_base_count(long unsigned nb, int base);
+int					ft_itoa_base_count(long unsigned nb, int base);
 int					ft_intlen(int n);
 char				*ft_utoa(unsigned int n);
 int					ft_atoi(const char *str);
@@ -70,5 +69,3 @@ void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 #endif
-
-

@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 11:42:41 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/14 18:21:29 by Sophie           ###   ########.fr       */
+/*   Updated: 2021/03/15 11:52:25 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int	ft_num_word(const char *s, char c)
 char		**ft_split(const char *s, char c)
 {
 	int		start;
-	char		**array;
+	char	**array;
 	int		i;
 	int		nb_word;
 	int		len;

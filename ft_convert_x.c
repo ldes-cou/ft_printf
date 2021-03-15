@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 14:13:12 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/14 21:41:40 by Sophie           ###   ########.fr       */
+/*   Updated: 2021/03/15 12:17:06 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_convert_x_lo(va_list ap, t_data *d)
 {
-	char		*display;
+	char	*display;
 	int		len_str;
 
 	d->u_arg = va_arg(ap, unsigned int);
@@ -59,7 +59,7 @@ void	ft_treat_unsigned_int(char *display, int len_str, t_data *d)
 
 void	ft_convert_x_up(va_list ap, t_data *d)
 {
-	char		*display;
+	char	*display;
 	int		len_str;
 
 	d->u_arg = (va_arg(ap, unsigned int));

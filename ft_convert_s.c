@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 14:36:29 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/12 11:31:10 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/15 10:49:13 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_convert_s(va_list ap, t_data *data)
 {
-	char *arg;
-	size_t len;
-	int i;
+	char	*arg;
+	size_t	len;
+	int		i;
 
 	i = 0;
 	arg = va_arg(ap, char *);
@@ -30,10 +30,9 @@ void	ft_convert_s(va_list ap, t_data *data)
 			ft_putnstr(arg, len, data);
 		if (data->width > (int)len)
 			ft_treat_width(data);
-		if(!data->minus || (data->minus && !data->width))
+		if (!data->minus || (data->minus && !data->width))
 			ft_putnstr(arg, len, data);
 	}
 	else
 		ft_putstr(arg, data);
 }
-

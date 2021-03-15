@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 11:20:54 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/06 11:21:03 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/15 12:16:07 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ static int	ft_len(long nb)
 	}
 	return (len);
 }
+
 char		*ft_utoa(unsigned int n)
 {
 	char	*res;

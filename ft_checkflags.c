@@ -6,36 +6,23 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 11:23:11 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/12 11:25:20 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/15 12:37:33 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 void	ft_init_flags(const char *format, va_list ap, t_data *data)
-{	
-	if (format[data->i] == '0')
-	{
-		data->zero = 1;
-		while (format[data->i] == '0')
-			data->i++;
-	}
-	if (format[data->i] == '-')
-	{
-		data->minus = 1;
-		while (format[data->i] == '-')
-		{
-			data->i++;
-		}
-
-	}
+{
+	ft_init_minus_zero(format, data);
 	while (format[data->i])
-	{	if (format[data->i] == '.')
+	{
+		if (format[data->i] == '.')
 			data->dot = 1;
 		if (ft_isdigit(format[data->i]))
 			ft_treat_digit_flag(format, data);
 		if (format[data->i] == '*')
-			ft_treat_wildcard(format, ap, data);
+			ft_treat_wild(format, ap, data);
 		if (ft_is_type(format[data->i]))
 		{
 			data->type = format[data->i];
@@ -44,14 +31,15 @@ void	ft_init_flags(const char *format, va_list ap, t_data *data)
 		data->i++;
 	}
 }
-int	ft_check_flags(t_data *data)
+
+int		ft_check_flags(t_data *data)
 {
 	if (data->dot || data->wi)
 		return (1);
 	return (0);
 }
 
-void	ft_treat_wildcard(const char *format, va_list ap, t_data *data)
+void	ft_treat_wild(const char *format, va_list ap, t_data *data)
 {
 	data->wild = 1;
 	if (format[data->i - 1] == '.')
@@ -75,7 +63,7 @@ void	ft_treat_wildcard(const char *format, va_list ap, t_data *data)
 		}
 	}
 }
-	
+
 void	ft_treat_digit_flag(const char *format, t_data *data)
 {
 	if (!data->dot)
@@ -83,7 +71,7 @@ void	ft_treat_digit_flag(const char *format, t_data *data)
 		data->wi = 1;
 		data->width = ft_atoi(&format[data->i]);
 		if (data->width > 9)
-			data->i += (ft_intlen(data->width) -1);		
+			data->i += (ft_intlen(data->width) - 1);
 	}
 	else
 	{
@@ -95,6 +83,22 @@ void	ft_treat_digit_flag(const char *format, t_data *data)
 		else
 			data->dot = 1;
 		if (data->precision > 9)
-			data->i += (ft_intlen(data->precision) - 1);		
+			data->i += (ft_intlen(data->precision) - 1);
+	}
+}
+
+void	ft_init_minus_zero(const char *format, t_data *data)
+{
+	if (format[data->i] == '0')
+	{
+		data->zero = 1;
+		while (format[data->i] == '0')
+			data->i++;
+	}
+	if (format[data->i] == '-')
+	{
+		data->minus = 1;
+		while (format[data->i] == '-')
+			data->i++;
 	}
 }

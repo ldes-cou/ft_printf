@@ -6,48 +6,35 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 10:40:19 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/14 22:16:01 by Sophie           ###   ########.fr       */
+/*   Updated: 2021/03/15 11:13:58 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_treat_width(t_data *data)
+void	ft_treat_width(t_data *d)
 {
 	int i;
 
 	i = -1;
-
-	if ((data->zero && !data->dot) && !data->minus)
+	if ((d->zero && !d->dot) && !d->minus)
 	{
-		if (data->sign == 1)
+		if (d->sign == 1)
+			ft_putchar('-', d);
+		if ((d->type == 'i' || d->type == 'd') && d->zero && d->precision)
 		{
-			ft_putchar('-', data);
-			//data->len--;
-			//printf("treat_wi :data->len : %i\n", data->len);
+			while (++i < d->len)
+				ft_putchar(' ', d);
 		}
-		if ((data->type == 'i' || data->type == 'd') && data->zero && data->precision)
-		{
-			while (++i < data->len)
-	
-				ft_putchar(' ', data);
-		}	
 		else
 		{
-			while (++i < data->len)
-				ft_putchar('0', data);
+			while (++i < d->len)
+				ft_putchar('0', d);
 		}
-
 	}
 	else
 	{
-		//if (data->sign && (data->type == 'i' || data->type == 'd') && !data->minus)
-		//	data->len--;
-		while (data->len)
-		{
-			ft_putchar(' ', data);
-			data->len--;
-		}
-	}	return ;
+		while (d->len--)
+			ft_putchar(' ', d);
+	}
 }
-	

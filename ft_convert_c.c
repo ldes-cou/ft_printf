@@ -6,27 +6,20 @@
 /*   By: ldes-cou <ldes-cou@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 10:35:40 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/12 10:41:58 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/15 10:26:12 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void ft_convert_c(va_list ap, t_data *data)
+void	ft_convert_c(va_list ap, t_data *data)
 {
 	int c;
-	
+
 	c = va_arg(ap, int);
-	/*if (data->dot)
-		data->dot -= 1;*/
 	if (ft_check_flags(data))
-	{	
+	{
 		data->len = data->width - 1;
-		/*printf("%i\n", data->minus);
-		printf("%i\n", data->zero);
-		printf("%i\n", data->precision);
-		printf("%i\n", data->width);
-		//printf("there are flags bitch !\n");*/
 		if (data->width <= 1 || data->minus)
 		{
 			ft_putchar(c, data);
@@ -34,7 +27,7 @@ void ft_convert_c(va_list ap, t_data *data)
 		}
 		if (data->width)
 			ft_treat_width(data);
-		if (!data->minus) 
+		if (!data->minus)
 			ft_putchar(c, data);
 	}
 	else

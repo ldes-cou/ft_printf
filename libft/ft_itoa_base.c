@@ -6,12 +6,11 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 11:21:48 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/14 20:42:13 by Sophie           ###   ########.fr       */
+/*   Updated: 2021/03/15 12:16:58 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
-
+#include "libft.h"
 
 char	*ft_itoa_base(long unsigned nb, int base)
 {
@@ -34,7 +33,7 @@ char	*ft_itoa_base(long unsigned nb, int base)
 	return (ret);
 }
 
-int	ft_itoa_base_count(long unsigned nb, int base)
+int		ft_itoa_base_count(long unsigned nb, int base)
 {
 	int i;
 

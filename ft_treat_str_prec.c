@@ -1,11 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_treat_str_prec.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/15 10:52:52 by ldes-cou          #+#    #+#             */
+/*   Updated: 2021/03/15 10:58:25 by ldes-cou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int		ft_treat_str_prec(char *str, t_data *data)
 {
 	size_t strlen;
 
- 	strlen = (int)ft_strlen(str);
-	//printf("data->precision%i", data->precision);
+	strlen = (int)ft_strlen(str);
 	if (data->dot && (data->precision < (int)strlen))
 		strlen = data->precision;
 	else

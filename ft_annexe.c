@@ -6,7 +6,7 @@
 /*   By: ldes-cou <ldes-cou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 10:58:38 by ldes-cou          #+#    #+#             */
-/*   Updated: 2021/03/12 11:25:31 by ldes-cou         ###   ########.fr       */
+/*   Updated: 2021/03/15 11:42:38 by ldes-cou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	ft_putnbr(int nb, t_data *data)
 	else
 		ft_putchar(n + '0', data);
 }
+
 void	ft_putnbr_u(int nb, t_data *data)
 {
 	long long int n;
